@@ -1,0 +1,73 @@
+﻿IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+
+GO
+
+CREATE TABLE [IssueSeverities] (
+    [IssueSeverityId] uniqueidentifier NOT NULL,
+    [Name] nvarchar(max) NULL,
+    CONSTRAINT [PK_IssueSeverities] PRIMARY KEY ([IssueSeverityId])
+);
+
+GO
+
+CREATE TABLE [IssueTypes] (
+    [IssueTypeId] uniqueidentifier NOT NULL,
+    [Name] nvarchar(max) NULL,
+    CONSTRAINT [PK_IssueTypes] PRIMARY KEY ([IssueTypeId])
+);
+
+GO
+
+CREATE TABLE [ResolutionStatuses] (
+    [ResolutionStatusId] uniqueidentifier NOT NULL,
+    [Name] nvarchar(max) NULL,
+    CONSTRAINT [PK_ResolutionStatuses] PRIMARY KEY ([ResolutionStatusId])
+);
+
+GO
+
+CREATE TABLE [Tickets] (
+    [TicketId] uniqueidentifier NOT NULL,
+    [IssueTypeId] uniqueidentifier NOT NULL,
+    [IssueSeverityId] uniqueidentifier NOT NULL,
+    [ResolutionStatusId] uniqueidentifier NOT NULL,
+    [ResolutionSteps] nvarchar(max) NULL,
+    [Comment] nvarchar(max) NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    CONSTRAINT [PK_Tickets] PRIMARY KEY ([TicketId])
+);
+
+GO
+
+CREATE TABLE [UserRoles] (
+    [UserRoleId] uniqueidentifier NOT NULL,
+    [Name] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserRoleId])
+);
+
+GO
+
+CREATE TABLE [Users] (
+    [UserId] uniqueidentifier NOT NULL,
+    [Username] nvarchar(max) NULL,
+    [Password] nvarchar(max) NULL,
+    [Name] nvarchar(max) NULL,
+    [UserRoleId] uniqueidentifier NOT NULL,
+    [DateLogged] datetime2 NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserId])
+);
+
+GO
+
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20190908060423_initial', N'2.2.6-servicing-10079');
+
+GO
+
