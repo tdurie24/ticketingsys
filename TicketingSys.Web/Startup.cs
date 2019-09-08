@@ -35,6 +35,9 @@ namespace TicketingSys.Web
             services.AddDbContext<TicketingDbContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("TicketingSysConn")));
 
             services.AddTransient<ITicketService, TicketService>();
+            services.AddTransient<IIssueSeverityService, IssueSeverityService>();
+            services.AddTransient<IIssueTypeService, IssueTypeService>();
+            services.AddTransient<IResolutionStatusService, ResolutionStatusService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
