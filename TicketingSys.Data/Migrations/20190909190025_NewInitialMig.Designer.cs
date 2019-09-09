@@ -10,8 +10,8 @@ using TicketingSys.Data;
 namespace TicketingSys.Data.Migrations
 {
     [DbContext(typeof(TicketingDbContext))]
-    [Migration("20190909095306_updateTicketModel")]
-    partial class updateTicketModel
+    [Migration("20190909190025_NewInitialMig")]
+    partial class NewInitialMig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

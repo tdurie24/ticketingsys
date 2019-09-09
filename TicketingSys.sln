@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketingSys.Domain", "TicketingSys.Domain\TicketingSys.Domain.csproj", "{8F1FD4FA-98BA-4147-A08F-89281DE7FF94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketingSys.Domain", "TicketingSys.Domain\TicketingSys.Domain.csproj", "{8F1FD4FA-98BA-4147-A08F-89281DE7FF94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketingSys.Data", "TicketingSys.Data\TicketingSys.Data.csproj", "{A5AAB0F3-CEA2-49E2-9170-D1F179410DEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketingSys.Data", "TicketingSys.Data\TicketingSys.Data.csproj", "{A5AAB0F3-CEA2-49E2-9170-D1F179410DEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketingSys.Web", "TicketingSys.Web\TicketingSys.Web.csproj", "{A49FD8A6-405D-4CF4-9B6B-834900CFE0AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketingSys.Web", "TicketingSys.Web\TicketingSys.Web.csproj", "{A49FD8A6-405D-4CF4-9B6B-834900CFE0AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -32,7 +32,7 @@ namespace TicketingSys.Web.Controllers
         /// <returns></returns>
         public async Task<JsonResult> GetIssueTypesAsync()
         {
-            return Json(await this.issueTypeService.GetIssueTypesAsync());
+            return Json(await this.issueTypeService.GetIssueTypesAsync().ConfigureAwait(false));
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace TicketingSys.Web.Controllers
         /// <returns></returns>
         public async Task<JsonResult> GetResolutionStatusesAsync()
         {
-            return Json(await this.iIResolutionStatusService.GetResolutionStatusAsync());
+            return Json(await this.iIResolutionStatusService.GetResolutionStatusAsync().ConfigureAwait(false));
         }
     }
 }

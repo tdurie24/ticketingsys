@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TicketingSys.Data.Migrations
 {
-    public partial class initial : Migration
+    public partial class NewInitialMig : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -57,6 +57,7 @@ namespace TicketingSys.Data.Migrations
                     IssueSeverityId = table.Column<int>(nullable: false),
                     ResolutionStatusId = table.Column<int>(nullable: false),
                     ResolutionSteps = table.Column<string>(nullable: true),
+                    TicketNumber = table.Column<string>(nullable: true),
                     Comment = table.Column<string>(nullable: true),
                     UserId = table.Column<int>(nullable: false)
                 },

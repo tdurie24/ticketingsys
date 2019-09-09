@@ -10,8 +10,8 @@ using TicketingSys.Data;
 namespace TicketingSys.Data.Migrations
 {
     [DbContext(typeof(TicketingDbContext))]
-    [Migration("20190909094410_initial")]
-    partial class initial
+    [Migration("20190909193706_databaseSeeding")]
+    partial class databaseSeeding
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -76,6 +76,8 @@ namespace TicketingSys.Data.Migrations
 
                     b.Property<string>("ResolutionSteps");
 
+                    b.Property<string>("TicketNumber");
+
                     b.Property<int>("UserId");
 
                     b.HasKey("TicketId");
@@ -115,6 +117,18 @@ namespace TicketingSys.Data.Migrations
                     b.HasKey("UserRoleId");
 
                     b.ToTable("UserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserRoleId = 1,
+                            Name = "User"
+                        },
+                        new
+                        {
+                            UserRoleId = 2,
+                            Name = "Technician"
+                        });
                 });
 #pragma warning restore 612, 618
         }
