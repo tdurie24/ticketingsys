@@ -2,6 +2,7 @@
 
 namespace TicketingSys.Data.Migrations
 {
+
     public partial class updateTicketModel : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

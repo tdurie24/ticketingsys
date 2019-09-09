@@ -9,6 +9,10 @@ using TicketingSys.Domain.Contracts;
 
 namespace TicketingSys.Web.Services
 {
+    /// <summary>
+    /// Ticketing Service
+    /// </summary>
+    /// <seealso cref="TicketingSys.Domain.Contracts.ITicketService" />
     public class TicketService : ITicketService
     {
         private TicketingDbContext ticketingDbContext;
@@ -16,6 +20,12 @@ namespace TicketingSys.Web.Services
         {
             this.ticketingDbContext = ticketingDbContext;
         }
+
+        /// <summary>
+        /// Creates the ticket asynchronous.
+        /// </summary>
+        /// <param name="ticket">The ticket.</param>
+        /// <returns></returns>
         public async Task<int> CreateTicketAsync(Ticket ticket)
         {
             try
@@ -29,6 +39,11 @@ namespace TicketingSys.Web.Services
             }
         }
 
+        /// <summary>
+        /// Gets the tickets asynchronous.
+        /// </summary>
+        /// <param name="userId">The user identifier.</param>
+        /// <returns></returns>
         public async Task<List<Ticket>> GetTicketsAsync(int userId)
         {
             try

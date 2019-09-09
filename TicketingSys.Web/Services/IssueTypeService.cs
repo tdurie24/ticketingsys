@@ -9,6 +9,10 @@ using TicketingSys.Domain.Contracts;
 
 namespace TicketingSys.Web.Services
 {
+    /// <summary>
+    /// IssueType Service
+    /// </summary>
+    /// <seealso cref="TicketingSys.Domain.Contracts.IIssueTypeService" />
     public class IssueTypeService : IIssueTypeService
     {
         private TicketingDbContext ticketingDbContext;
@@ -17,6 +21,10 @@ namespace TicketingSys.Web.Services
             this.ticketingDbContext = ticketingDbContext;
         }
 
+        /// <summary>
+        /// Gets the issue types asynchronous.
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<IssueType>> GetIssueTypesAsync()
         {
             try

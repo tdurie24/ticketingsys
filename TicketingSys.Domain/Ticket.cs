@@ -1,7 +1,10 @@
 ﻿using System;
 
 namespace TicketingSys.Domain
-{        
+{
+    /// <summary>
+    /// Ticket Model 
+    /// </summary>
     public class Ticket
     {
         public int TicketId { get; set; }

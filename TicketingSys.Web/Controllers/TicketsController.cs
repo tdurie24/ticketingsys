@@ -7,6 +7,9 @@ using TicketingSys.Domain.Contracts;
 
 namespace TicketingSys.Web.Controllers
 {
+    /// <summary>
+    /// Ticket Controller
+    /// </summary>
     public class TicketsController : Controller
     {
         private ITicketService ticketService;

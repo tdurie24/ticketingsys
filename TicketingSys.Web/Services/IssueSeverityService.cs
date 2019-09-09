@@ -7,6 +7,10 @@ using TicketingSys.Domain.Contracts;
 
 namespace TicketingSys.Web.Services
 {
+    /// <summary>
+    /// IIssueSeverity Service
+    /// </summary>
+    /// <seealso cref="TicketingSys.Domain.Contracts.IIssueSeverityService" />
     public class IssueSeverityService : IIssueSeverityService
     {
         private TicketingDbContext ticketingDbContext;
@@ -14,6 +18,11 @@ namespace TicketingSys.Web.Services
         {
             this.ticketingDbContext = ticketingDbContext;
         }
+
+        /// <summary>
+        /// Gets the issue severities asynchronous.
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<IssueSeverity>> GetIssueSeveritiesAsync()
         {
             try

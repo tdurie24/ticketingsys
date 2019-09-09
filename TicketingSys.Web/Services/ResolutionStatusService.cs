@@ -7,6 +7,10 @@ using TicketingSys.Domain.Contracts;
 
 namespace TicketingSys.Web.Services
 {
+    /// <summary>
+    /// ResolutionStatus Service
+    /// </summary>
+    /// <seealso cref="TicketingSys.Domain.Contracts.IResolutionStatusService" />
     public class ResolutionStatusService : IResolutionStatusService
     {
         private TicketingDbContext ticketingDbContext;
@@ -15,6 +19,10 @@ namespace TicketingSys.Web.Services
             this.ticketingDbContext = ticketingDbContext;
         }
 
+        /// <summary>
+        /// Gets the resolution status asynchronous.
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<ResolutionStatus>> GetResolutionStatusAsync()
         {
             try
