@@ -30,7 +30,7 @@ namespace TicketingSys.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddKendo();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<TicketingDbContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("TicketingSysConn")));
 
