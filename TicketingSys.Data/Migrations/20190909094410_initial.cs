@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TicketingSys.Data.Migrations
@@ -11,7 +12,8 @@ namespace TicketingSys.Data.Migrations
                 name: "IssueSeverities",
                 columns: table => new
                 {
-                    IssueSeverityId = table.Column<Guid>(nullable: false),
+                    IssueSeverityId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -23,7 +25,8 @@ namespace TicketingSys.Data.Migrations
                 name: "IssueTypes",
                 columns: table => new
                 {
-                    IssueTypeId = table.Column<Guid>(nullable: false),
+                    IssueTypeId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -35,7 +38,8 @@ namespace TicketingSys.Data.Migrations
                 name: "ResolutionStatuses",
                 columns: table => new
                 {
-                    ResolutionStatusId = table.Column<Guid>(nullable: false),
+                    ResolutionStatusId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -47,13 +51,14 @@ namespace TicketingSys.Data.Migrations
                 name: "Tickets",
                 columns: table => new
                 {
-                    TicketId = table.Column<Guid>(nullable: false),
-                    IssueTypeId = table.Column<Guid>(nullable: false),
-                    IssueSeverityId = table.Column<Guid>(nullable: false),
-                    ResolutionStatusId = table.Column<Guid>(nullable: false),
+                    TicketId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    IssueTypeId = table.Column<int>(nullable: false),
+                    IssueSeverityId = table.Column<int>(nullable: false),
+                    ResolutionStatusId = table.Column<int>(nullable: false),
                     ResolutionSteps = table.Column<string>(nullable: true),
                     Comment = table.Column<string>(nullable: true),
-                    UserId = table.Column<Guid>(nullable: false)
+                    UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -64,7 +69,8 @@ namespace TicketingSys.Data.Migrations
                 name: "UserRoles",
                 columns: table => new
                 {
-                    UserRoleId = table.Column<Guid>(nullable: false),
+                    UserRoleId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -76,11 +82,12 @@ namespace TicketingSys.Data.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    UserId = table.Column<Guid>(nullable: false),
+                    UserId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Username = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
-                    UserRoleId = table.Column<Guid>(nullable: false),
+                    UserRoleId = table.Column<int>(nullable: false),
                     DateLogged = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>

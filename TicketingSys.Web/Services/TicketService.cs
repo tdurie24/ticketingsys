@@ -40,7 +40,7 @@ namespace TicketingSys.Web.Services
 
                 return tickets;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 throw;
             }

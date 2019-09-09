@@ -10,8 +10,8 @@ using TicketingSys.Data;
 namespace TicketingSys.Data.Migrations
 {
     [DbContext(typeof(TicketingDbContext))]
-    [Migration("20190908062544_initial")]
-    partial class initial
+    [Migration("20190909095306_updateTicketModel")]
+    partial class updateTicketModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,8 +23,9 @@ namespace TicketingSys.Data.Migrations
 
             modelBuilder.Entity("TicketingSys.Domain.IssueSeverity", b =>
                 {
-                    b.Property<Guid>("IssueSeverityId")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("IssueSeverityId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
@@ -35,8 +36,9 @@ namespace TicketingSys.Data.Migrations
 
             modelBuilder.Entity("TicketingSys.Domain.IssueType", b =>
                 {
-                    b.Property<Guid>("IssueTypeId")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("IssueTypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
@@ -47,8 +49,9 @@ namespace TicketingSys.Data.Migrations
 
             modelBuilder.Entity("TicketingSys.Domain.ResolutionStatus", b =>
                 {
-                    b.Property<Guid>("ResolutionStatusId")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("ResolutionStatusId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
@@ -59,20 +62,23 @@ namespace TicketingSys.Data.Migrations
 
             modelBuilder.Entity("TicketingSys.Domain.Ticket", b =>
                 {
-                    b.Property<Guid>("TicketId")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("TicketId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Comment");
 
-                    b.Property<Guid>("IssueSeverityId");
+                    b.Property<int>("IssueSeverityId");
 
-                    b.Property<Guid>("IssueTypeId");
+                    b.Property<int>("IssueTypeId");
 
-                    b.Property<Guid>("ResolutionStatusId");
+                    b.Property<int>("ResolutionStatusId");
 
                     b.Property<string>("ResolutionSteps");
 
-                    b.Property<Guid>("UserId");
+                    b.Property<string>("TicketNumber");
+
+                    b.Property<int>("UserId");
 
                     b.HasKey("TicketId");
 
@@ -81,8 +87,9 @@ namespace TicketingSys.Data.Migrations
 
             modelBuilder.Entity("TicketingSys.Domain.User", b =>
                 {
-                    b.Property<Guid>("UserId")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("DateLogged");
 
@@ -90,7 +97,7 @@ namespace TicketingSys.Data.Migrations
 
                     b.Property<string>("Password");
 
-                    b.Property<Guid>("UserRoleId");
+                    b.Property<int>("UserRoleId");
 
                     b.Property<string>("Username");
 
@@ -101,8 +108,9 @@ namespace TicketingSys.Data.Migrations
 
             modelBuilder.Entity("TicketingSys.Domain.UserRole", b =>
                 {
-                    b.Property<Guid>("UserRoleId")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("UserRoleId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
