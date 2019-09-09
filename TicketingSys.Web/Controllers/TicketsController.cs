@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TicketingSys.Domain.Contracts;
 
 namespace TicketingSys.Web.Controllers
 {
     /// <summary>
-    /// Ticket Controller
+    /// Tickets Controller
     /// </summary>
     public class TicketsController : Controller
     {
