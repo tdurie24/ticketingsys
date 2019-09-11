@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TicketingSys.Domain;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace TicketingSys.Data
 {
-    public class TicketingDbContext : DbContext
+    public class TicketingDbContext : IdentityDbContext<IdentityUser>
     {
         public TicketingDbContext(DbContextOptions<TicketingDbContext> dbContextOptions) : base(dbContextOptions)
         {

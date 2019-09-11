@@ -53,6 +53,7 @@ namespace TicketingSys.Web
             }
 
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseCookiePolicy();
 
             app.UseMvc(routes => routes.MapRoute(
